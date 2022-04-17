@@ -1,8 +1,11 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 
 // Components
 import Layout from "./pages/Layout";
 import UseId from "./components/UseId";
+import UseTransition from "./components/UseTransition";
+import UseDeferredValue from "./components/UseDeferredValue";
 
 // Styled
 const Wrapper = styled.div`
@@ -13,9 +16,15 @@ const Wrapper = styled.div`
 function App() {
   return (
     <Wrapper>
-      <Layout>
-        <UseId />
-      </Layout>
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            <Route path="/useid" element={<UseId />} />
+            <Route path="/usetransition" element={<UseTransition />} />
+            <Route path="/usedeferredValue" element={<UseDeferredValue />} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
     </Wrapper>
   );
 }

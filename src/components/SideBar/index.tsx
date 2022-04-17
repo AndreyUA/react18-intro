@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 // Styled
@@ -8,11 +9,22 @@ const Wrapper = styled.div`
 `;
 
 const SideBar = () => {
+  const navigate = useNavigate();
+
+  const navigateToUseidPageHandler = () => navigate("/useid");
+  const navigateToUsetransitionPageHandler = () => navigate("/usetransition");
+  const navigateToUsedeferredValuePageHandler = () =>
+    navigate("/usedeferredValue");
+
   return (
     <Wrapper>
-      <a href="useId-hook">useId</a>
-      <a href="useTransition-hook">useTransition</a>
-      <a href="useDeferredValue-hook">useDeferredValue</a>
+      <button onClick={navigateToUseidPageHandler}>go to useid page</button>
+      <button onClick={navigateToUsetransitionPageHandler}>
+        go to usetransition page
+      </button>
+      <button onClick={navigateToUsedeferredValuePageHandler}>
+        go to usedeferredValue page
+      </button>
     </Wrapper>
   );
 };
