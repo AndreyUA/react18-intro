@@ -1,7 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
 
 // Constants
-import { ROUTES } from "./constants";
+import { ROUTES } from "../../constants/routes";
 
 // Styled
 import { Wrapper, List, ListItem, Button } from "./styled";

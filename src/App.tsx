@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import styled from "styled-components";
 
 // Components
@@ -22,6 +22,7 @@ function App() {
             <Route path="/useid" element={<UseId />} />
             <Route path="/usetransition" element={<UseTransition />} />
             <Route path="/usedeferredValue" element={<UseDeferredValue />} />
+            <Route path="*" element={<Navigate to="/useid" replace />} />
           </Routes>
         </Layout>
       </BrowserRouter>
