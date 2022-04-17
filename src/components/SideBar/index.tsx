@@ -1,30 +1,31 @@
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
+import { useNavigate, useLocation } from "react-router-dom";
+
+// Constants
+import { ROUTES } from "./constants";
 
 // Styled
-const Wrapper = styled.div`
-  flex: 1 1 auto;
-  max-width: 300px;
-  height: 100%;
-`;
+import { Wrapper, List, ListItem, Button } from "./styled";
 
 const SideBar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const navigateToUseidPageHandler = () => navigate("/useid");
-  const navigateToUsetransitionPageHandler = () => navigate("/usetransition");
-  const navigateToUsedeferredValuePageHandler = () =>
-    navigate("/usedeferredValue");
+  const navigateHandler = (path: string) => navigate(path);
 
   return (
     <Wrapper>
-      <button onClick={navigateToUseidPageHandler}>go to useid page</button>
-      <button onClick={navigateToUsetransitionPageHandler}>
-        go to usetransition page
-      </button>
-      <button onClick={navigateToUsedeferredValuePageHandler}>
-        go to usedeferredValue page
-      </button>
+      <List>
+        {ROUTES.map((route) => (
+          <ListItem key={route}>
+            <Button
+              isActiveRoute={location.pathname === route}
+              onClick={() => navigateHandler(route)}
+            >
+              go to "{route}" page
+            </Button>
+          </ListItem>
+        ))}
+      </List>
     </Wrapper>
   );
 };
