@@ -12,10 +12,6 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
   max-width: 310px;
 `;
-export const Title = styled.h1`
-  text-align: center;
-  color: #f1f2f7;
-`;
 export const Form = styled.form`
   display: flex;
   flex-direction: column;

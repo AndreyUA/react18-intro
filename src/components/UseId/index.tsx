@@ -1,10 +1,12 @@
 import { useState, useId, ChangeEvent } from "react";
 
+// Components
+import Title from "../Title";
+
 // Styled
 import {
   Wrapper,
   Content,
-  Title,
   Form,
   Label,
   Input,
@@ -43,7 +45,7 @@ const UseId = () => {
   return (
     <Wrapper>
       <Content>
-        <Title>Usage of useId hook.</Title>
+        <Title content="Usage of useId hook." />
         <Form onSubmit={handleSubmit}>
           <Label htmlFor={name}>Enter your name</Label>
           <Input
