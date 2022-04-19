@@ -1,13 +1,15 @@
-import styled from "styled-components";
+// import styled from "styled-components";
 
-// Styled
-const Wrapper = styled.div`
-  flex: 2 1 auto;
-  height: 100%;
-`;
+// Components
+import Title from "../Title";
+import Wrapper from "../Wrapper";
 
 const UseTransition = () => {
-  return <Wrapper>UseTransition</Wrapper>;
+  return (
+    <Wrapper>
+      <Title content="Usage of useTransition hook." />
+    </Wrapper>
+  );
 };
 
 export default UseTransition;
