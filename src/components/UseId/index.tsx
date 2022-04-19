@@ -2,10 +2,10 @@ import { useState, useId, ChangeEvent } from "react";
 
 // Components
 import Title from "../Title";
+import Wrapper from "../Wrapper";
 
 // Styled
 import {
-  Wrapper,
   Content,
   Form,
   Label,

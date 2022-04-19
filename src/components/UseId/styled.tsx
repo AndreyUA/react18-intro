@@ -1,14 +1,5 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  flex: 2 1 auto;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #3a4f6a;
-`;
 export const Content = styled.div`
   max-width: 310px;
 `;
