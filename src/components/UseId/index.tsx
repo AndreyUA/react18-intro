@@ -1,17 +1,17 @@
 import { useState, useId, ChangeEvent } from "react";
-import styled from "styled-components";
 
 // Styled
-const Wrapper = styled.div`
-  flex: 2 1 auto;
-  height: 100%;
-`;
-const Title = styled.h1``;
-const Form = styled.form``;
-const Label = styled.label``;
-const Input = styled.input``;
-const Button = styled.button``;
-const ResultParagraph = styled.p``;
+import {
+  Wrapper,
+  Content,
+  Title,
+  Form,
+  Label,
+  Input,
+  Button,
+  ResultParagraph,
+  ResultBlock,
+} from "./styled";
 
 // Types
 interface FormProps {
@@ -42,42 +42,46 @@ const UseId = () => {
 
   return (
     <Wrapper>
-      <Title>Usage of useId hook.</Title>
-      <Form onSubmit={handleSubmit}>
-        <Label htmlFor={name}>Enter your name</Label>
-        <Input
-          value={form.name}
-          onChange={handleChange}
-          type="text"
-          name="name"
-          id={name}
-        />
+      <Content>
+        <Title>Usage of useId hook.</Title>
+        <Form onSubmit={handleSubmit}>
+          <Label htmlFor={name}>Enter your name</Label>
+          <Input
+            value={form.name}
+            onChange={handleChange}
+            type="text"
+            name="name"
+            id={name}
+          />
 
-        <Label htmlFor={age}>Enter your age</Label>
-        <Input
-          value={form.age}
-          onChange={handleChange}
-          type="number"
-          name="age"
-          id={age}
-        />
+          <Label htmlFor={age}>Enter your age</Label>
+          <Input
+            value={form.age}
+            onChange={handleChange}
+            type="number"
+            name="age"
+            id={age}
+          />
 
-        <Button disabled={validateSubBtn(form)} type="submit">
-          Submit form
-        </Button>
-      </Form>
-      {isSubmitted && (
-        <>
-          <ResultParagraph>
-            Value of input name: {form.name} and generated ID by{" "}
-            <strong>useId</strong> {name}
-          </ResultParagraph>
-          <ResultParagraph>
-            Value of input age: {form.age} and generated ID by{" "}
-            <strong>useId</strong> {age}
-          </ResultParagraph>
-        </>
-      )}
+          <Button disabled={validateSubBtn(form)} type="submit">
+            Submit form
+          </Button>
+        </Form>
+        <ResultBlock>
+          {isSubmitted && (
+            <>
+              <ResultParagraph>
+                Value of input name: {form.name} and generated ID by{" "}
+                <strong>useId</strong> is {name}
+              </ResultParagraph>
+              <ResultParagraph>
+                Value of input age: {form.age} and generated ID by{" "}
+                <strong>useId</strong> is {age}
+              </ResultParagraph>
+            </>
+          )}
+        </ResultBlock>
+      </Content>
     </Wrapper>
   );
 };
